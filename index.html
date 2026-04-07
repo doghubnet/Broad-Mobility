@@ -4,8 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Broad Mobility | Premium Visa & Travel Consultancy</title>
-  <meta name="description" content="Broad Mobility is an Addis Ababa-based premium visa and travel consultancy specializing in student and tourist visas worldwide." />
-  <meta name="keywords" content="Broad Mobility, visa consultancy Addis Ababa, student visa Ethiopia, tourist visa worldwide" />
+  <meta name="description" content="Broad Mobility is an Addis Ababa-based premium visa consultancy for student and tourist visas worldwide." />
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
@@ -18,38 +17,37 @@
             accent: '#00A651',
             gold: '#F2C94C',
             bgsoft: '#F8F9FA',
-            textink: '#1A1A1A'
+            ink: '#1A1A1A'
           },
           boxShadow: {
-            glass: '0 20px 45px rgba(0,31,63,.12)',
+            glass: '0 20px 45px rgba(0,31,63,.13)',
             glow: '0 14px 38px rgba(0,166,81,.28)'
-          },
-          fontFamily: {
-            inter: ['Inter', 'ui-sans-serif', 'system-ui', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif']
           }
         }
       }
     }
   </script>
   <style>
-    body { font-family: Inter, ui-sans-serif, system-ui; background:#F8F9FA; color:#1A1A1A; overflow-x:hidden; }
-    .glass { backdrop-filter: blur(16px); background: rgba(248,249,250,.75); border: 1px solid rgba(255,255,255,.55); }
-    .progress-line { position: fixed; top:0; left:0; width:0; height:4px; z-index:90; background: linear-gradient(90deg,#00A651,#F2C94C); }
-    .hero::before { content:''; position:absolute; inset:-12%; z-index:-2; background: radial-gradient(circle at 10% 10%, rgba(0,166,81,.2), transparent 36%), radial-gradient(circle at 80% 20%, rgba(242,201,76,.2), transparent 34%), radial-gradient(circle at 50% 70%, rgba(0,31,63,.16), transparent 44%); animation: drift 18s ease-in-out infinite alternate; }
-    .hero::after { content:''; position:absolute; inset:0; z-index:-1; background-image: linear-gradient(rgba(0,31,63,.08) 1px, transparent 1px), linear-gradient(90deg, rgba(0,31,63,.08) 1px, transparent 1px); background-size: 58px 58px; mask-image: radial-gradient(circle at center, black 32%, transparent 74%); }
-    .floating { position:absolute; border-radius:999px; opacity:.3; animation: float 9s ease-in-out infinite; }
-    .country-card:hover .country-media { transform: scale(1.08); }
-    .country-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,31,63,.2); }
-    .country-card:hover .pulse { opacity:1; transform:translateY(0); }
-    .country-media { transition: transform .65s ease; }
-    .pulse { opacity:0; transform: translateY(8px); transition: all .45s ease; }
-    .faq-content { max-height:0; overflow:hidden; transition:max-height .35s ease; }
-    .step-circle { transition: all .35s ease; }
-    .step-card:hover .step-circle { background:#00A651; color:#fff; transform:scale(1.08); }
-    .logo-mark { transform-origin:center; animation: logoPulse 4s ease-in-out infinite; }
-    @keyframes drift { from { transform: translate3d(-2%,0,0) scale(1);} to { transform: translate3d(2%,-1%,0) scale(1.05);} }
-    @keyframes float { 0%,100%{transform:translateY(0)}50%{transform:translateY(-16px)} }
-    @keyframes logoPulse { 0%,100%{ transform: rotate(0deg) scale(1);} 50%{ transform: rotate(-2deg) scale(1.03);} }
+    body{font-family:Inter,ui-sans-serif,system-ui;background:#F8F9FA;color:#1A1A1A;overflow-x:hidden}
+    .glass{backdrop-filter:blur(16px);background:rgba(248,249,250,.75);border:1px solid rgba(255,255,255,.5)}
+    .progress-line{position:fixed;top:0;left:0;height:4px;width:0;background:linear-gradient(90deg,#00A651,#F2C94C);z-index:80}
+    .hero:before{content:'';position:absolute;inset:-12%;z-index:-2;background:radial-gradient(circle at 10% 8%,rgba(0,166,81,.22),transparent 34%),radial-gradient(circle at 85% 20%,rgba(242,201,76,.2),transparent 34%),radial-gradient(circle at 50% 80%,rgba(0,31,63,.16),transparent 48%);animation:drift 16s ease-in-out infinite alternate}
+    .hero:after{content:'';position:absolute;inset:0;z-index:-1;background-image:linear-gradient(rgba(0,31,63,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(0,31,63,.07) 1px,transparent 1px);background-size:58px 58px;mask-image:radial-gradient(circle at center,black 32%,transparent 74%)}
+    .floating{position:absolute;border-radius:9999px;opacity:.3;animation:float 8s ease-in-out infinite}
+    .country-card:hover .country-image{transform:scale(1.08)}
+    .country-card:hover{transform:translateY(-8px)}
+    .country-card:hover .country-pulse{opacity:1;transform:translateY(0)}
+    .country-image{transition:transform .65s ease}
+    .country-pulse{opacity:0;transform:translateY(8px);transition:all .45s ease}
+    .faq-content{max-height:0;overflow:hidden;transition:max-height .35s ease}
+    .logo-mark{transform-origin:center;animation:logoPulse 4s ease-in-out infinite}
+    .modal-open{overflow:hidden}
+    .modal-overlay{background:rgba(0,18,38,.86);backdrop-filter:blur(10px)}
+    .particle-bg{position:absolute;inset:0;background:radial-gradient(circle at 20% 20%,rgba(0,166,81,.22),transparent 45%),radial-gradient(circle at 80% 10%,rgba(242,201,76,.18),transparent 42%),radial-gradient(circle at 50% 80%,rgba(255,255,255,.08),transparent 42%);pointer-events:none}
+    .drop-zone{border:1.5px dashed rgba(0,166,81,.55);background:rgba(0,166,81,.08)}
+    @keyframes drift{from{transform:translate3d(-2%,0,0) scale(1)}to{transform:translate3d(2%,-2%,0) scale(1.05)}}
+    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-16px)}}
+    @keyframes logoPulse{0%,100%{transform:rotate(0) scale(1)}50%{transform:rotate(-2deg) scale(1.03)}}
   </style>
 </head>
 <body>
@@ -58,45 +56,35 @@
   <header id="header" class="fixed top-0 inset-x-0 z-50 transition-all duration-500">
     <nav class="glass max-w-7xl mx-auto mt-4 rounded-2xl px-4 lg:px-6 py-3 shadow-glass">
       <div class="flex items-center justify-between gap-4">
-        <a href="#home" class="flex items-center gap-3">
-          <svg width="210" height="48" viewBox="0 0 210 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Broad Mobility Logo">
-            <g class="logo-mark" transform="translate(2,2)">
-              <path d="M5 30C12 21 15 14 24 8" stroke="#00A651" stroke-width="3" stroke-linecap="round"/>
-              <path d="M11 34C20 23 24 17 33 10" stroke="#00A651" stroke-width="3" stroke-linecap="round" opacity=".7"/>
-              <path d="M2 24C9 16 12 12 20 6" stroke="#00A651" stroke-width="3" stroke-linecap="round" opacity=".45"/>
-              <circle cx="5" cy="30" r="2.2" fill="#00A651"/>
-              <circle cx="11" cy="34" r="2.2" fill="#00A651"/>
-              <circle cx="2" cy="24" r="2.2" fill="#00A651"/>
+        <a href="#home" class="flex items-center gap-3" aria-label="Broad Mobility logo">
+          <svg width="238" height="50" viewBox="0 0 238 50" xmlns="http://www.w3.org/2000/svg">
+            <g class="logo-mark" transform="translate(2,3)">
+              <path d="M8 35C32 34 53 27 70 10" stroke="#16B7AA" stroke-width="4" fill="none" stroke-linecap="round"/>
+              <path d="M10 22C37 22 55 17 74 7" stroke="#16B7AA" stroke-width="4" fill="none" stroke-linecap="round" opacity=".86"/>
+              <path d="M14 42C40 40 60 31 82 14" stroke="#16B7AA" stroke-width="4" fill="none" stroke-linecap="round" opacity=".7"/>
+              <path d="M78 14C95 7 100 6 104 4" stroke="#16B7AA" stroke-width="4" fill="none" stroke-linecap="round"/>
+              <circle cx="8" cy="35" r="3" fill="#16B7AA"/><circle cx="10" cy="22" r="3" fill="#16B7AA"/><circle cx="14" cy="42" r="3" fill="#16B7AA"/><circle cx="104" cy="4" r="3" fill="#16B7AA"/>
             </g>
-            <text x="46" y="20" fill="#001F3F" font-size="16" font-weight="700" font-family="Inter, sans-serif">BROAD MOBILITY</text>
-            <text x="46" y="34" fill="#00A651" font-size="9" font-weight="500" font-family="Inter, sans-serif">Making Destiny, Making History</text>
-            <line x1="46" y1="38" x2="192" y2="38" stroke="#00A651" stroke-width="1.2"/>
+            <text x="112" y="19" fill="#001F3F" font-size="18" font-weight="700">BROAD MOBILITY</text>
+            <text x="112" y="34" fill="#00AFA0" font-size="9">Making Destiny, Making History</text>
+            <line x1="112" y1="38" x2="228" y2="38" stroke="#00AFA0" stroke-width="1.1"/>
           </svg>
         </a>
 
         <ul class="hidden lg:flex items-center gap-6 text-sm font-medium">
-          <li><a class="nav-link" href="#home">Home</a></li>
-          <li><a class="nav-link" href="#about">About Us</a></li>
-          <li><a class="nav-link" href="#services">Services</a></li>
-          <li><a class="nav-link" href="#destinations">Destinations</a></li>
-          <li><a class="nav-link" href="#impact">Success Stories</a></li>
-          <li><a class="nav-link" href="#how">How It Works</a></li>
-          <li><a class="nav-link" href="#testimonials">Testimonials</a></li>
-          <li><a class="nav-link" href="#contact">Contact</a></li>
+          <li><a class="nav-link" href="#home">Home</a></li><li><a class="nav-link" href="#about">About Us</a></li><li><a class="nav-link" href="#services">Services</a></li><li><a class="nav-link" href="#destinations">Destinations</a></li><li><a class="nav-link" href="#impact">Success Stories</a></li><li><a class="nav-link" href="#how">How It Works</a></li><li><a class="nav-link" href="#testimonials">Testimonials</a></li><li><a class="nav-link" href="#contact">Contact</a></li>
         </ul>
 
-        <div class="hidden lg:block">
-          <a href="#contact" class="rounded-full bg-gold px-5 py-2.5 text-navy font-semibold animate-pulse">Book Consultation</a>
-        </div>
-
-        <button id="menuBtn" class="lg:hidden text-2xl" aria-label="Open Menu">☰</button>
+        <button id="bookBtnTop" class="hidden lg:block rounded-full bg-gold text-navy font-semibold px-5 py-2.5 animate-pulse">Book Consultation</button>
+        <button id="menuBtn" class="lg:hidden text-2xl" aria-label="open menu">☰</button>
       </div>
     </nav>
 
-    <div id="mobileMenu" class="fixed inset-0 bg-navy/95 text-white hidden z-40">
-      <div class="p-7 flex items-center justify-between"><p class="font-semibold">Navigation</p><button id="closeMenu" class="text-3xl">×</button></div>
-      <div class="flex flex-col mt-14 text-3xl items-center gap-7">
+    <div id="mobileMenu" class="hidden fixed inset-0 bg-navy/95 text-white z-40">
+      <div class="p-8 flex justify-between"><p class="font-semibold">Navigation</p><button id="closeMenu" class="text-3xl">×</button></div>
+      <div class="flex flex-col gap-7 mt-12 items-center text-3xl">
         <a class="mobile-link" href="#home">Home</a><a class="mobile-link" href="#about">About Us</a><a class="mobile-link" href="#services">Services</a><a class="mobile-link" href="#destinations">Destinations</a><a class="mobile-link" href="#impact">Success Stories</a><a class="mobile-link" href="#how">How It Works</a><a class="mobile-link" href="#testimonials">Testimonials</a><a class="mobile-link" href="#contact">Contact</a>
+        <button id="bookBtnMobile" class="mt-5 rounded-full bg-gold text-navy px-7 py-3 font-semibold">Book Consultation</button>
       </div>
     </div>
   </header>
@@ -104,27 +92,24 @@
   <main>
     <section id="home" class="hero relative min-h-screen pt-32 flex items-center">
       <div class="absolute inset-0 overflow-hidden">
-        <div class="floating w-20 h-20 bg-accent/80 left-[8%] top-[26%]"></div>
-        <div class="floating w-16 h-16 bg-gold/80 left-[82%] top-[22%]" style="animation-delay:1s"></div>
-        <div class="floating w-24 h-24 bg-navy/40 left-[65%] top-[72%]" style="animation-delay:2.2s"></div>
+        <div class="floating w-20 h-20 bg-accent/80 left-[8%] top-[24%]"></div>
+        <div class="floating w-14 h-14 bg-gold/80 left-[84%] top-[26%]" style="animation-delay:1s"></div>
+        <div class="floating w-24 h-24 bg-navy/35 left-[65%] top-[72%]" style="animation-delay:2s"></div>
       </div>
-
       <div class="max-w-7xl mx-auto px-4 lg:px-6 w-full">
         <div class="max-w-4xl">
-          <p class="inline-block px-4 py-2 rounded-full border border-white bg-white/70 text-sm">Addis Ababa, Ethiopia • Global Standards</p>
-          <h1 id="heroTitle" class="mt-5 text-navy font-bold leading-[0.95] tracking-tight text-[2.8rem] md:text-[4.7rem] lg:text-[5.5rem]">Your Gateway to Global Opportunities. Expert Student & Tourist Visa Consultancy to Every Country Worldwide.</h1>
-          <p class="mt-6 text-gray-700 text-base md:text-xl">From Addis Ababa to your dream destination | Personalized guidance with international standards.</p>
-
+          <p class="inline-block px-4 py-2 rounded-full bg-white/70 border border-white text-sm">Addis Ababa, Ethiopia • International Standards</p>
+          <h1 id="heroTitle" class="mt-5 text-[2.8rem] md:text-[4.7rem] lg:text-[5.4rem] leading-[0.95] tracking-tight font-bold text-navy">Your Gateway to Global Opportunities. Expert Student & Tourist Visa Consultancy to Every Country Worldwide.</h1>
+          <p class="mt-6 text-lg text-gray-700">From Addis Ababa to your dream destination | Personalized guidance with international standards.</p>
           <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mt-8">
-            <div class="glass rounded-xl p-4"><p class="text-2xl font-bold counter" data-target="51">0</p><p class="text-xs">Visas Secured</p></div>
+            <div class="glass rounded-xl p-4"><p data-target="51" class="counter text-2xl font-bold">0</p><p class="text-xs">Visas Secured</p></div>
             <div class="glass rounded-xl p-4"><p class="text-2xl font-bold">Global</p><p class="text-xs">Reach</p></div>
             <div class="glass rounded-xl p-4"><p class="text-2xl font-bold">Proven</p><p class="text-xs">Track Record</p></div>
             <div class="glass rounded-xl p-4"><p class="text-2xl font-bold">95%+</p><p class="text-xs">Success Rate</p></div>
           </div>
-
           <div class="mt-9 flex flex-wrap gap-4">
-            <a href="#contact" class="rounded-full px-7 py-3 bg-accent text-white font-semibold hover:scale-105 transition">Book Consultation</a>
-            <a href="#destinations" class="rounded-full px-7 py-3 bg-navy text-white font-semibold hover:scale-105 transition">Explore Destinations</a>
+            <button id="bookBtnHero" class="rounded-full bg-accent text-white px-7 py-3 font-semibold hover:scale-105 transition">Book Consultation</button>
+            <a href="#destinations" class="rounded-full bg-navy text-white px-7 py-3 font-semibold hover:scale-105 transition">Explore Destinations</a>
           </div>
         </div>
       </div>
@@ -134,72 +119,50 @@
     <section id="about" class="py-24">
       <div class="max-w-7xl mx-auto px-4 lg:px-6 grid lg:grid-cols-2 gap-10 items-center">
         <div class="reveal">
-          <p class="uppercase tracking-[0.22em] text-sm text-accent">About Us</p>
-          <h2 class="text-4xl md:text-5xl text-navy font-bold mt-3">Built on Trust, Service, and Opportunity.</h2>
+          <p class="text-sm uppercase tracking-[0.23em] text-accent">About Us</p>
+          <h2 class="mt-3 text-4xl md:text-5xl text-navy font-bold">Built on Trust, Service, and Opportunity.</h2>
           <p class="mt-5 text-lg text-gray-700">Founder Gediyon Adamu has personally helped secure 51 visas. We deliver expert visa consultancy from the heart of Ethiopia.</p>
           <div class="mt-6 h-2 bg-gray-200 rounded-full overflow-hidden"><div id="timelineFill" class="h-full w-0 bg-gradient-to-r from-accent to-gold"></div></div>
-          <p class="text-sm text-gray-600 mt-2">Milestones from first success to international visa consultancy leadership.</p>
+          <p class="text-sm text-gray-600 mt-2">Milestone growth from first success to worldwide destination coverage.</p>
         </div>
-        <div class="reveal">
-          <div class="glass p-5 rounded-3xl shadow-glass">
-            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=900&q=80" alt="Professional portrait of Gediyon Adamu" class="rounded-2xl h-[420px] w-full object-cover" />
+        <a href="https://linkedin.com/in/gediyon-adamu" target="_blank" rel="noopener noreferrer" class="reveal block">
+          <div class="glass p-4 rounded-3xl hover:shadow-glow transition">
+            <img src="https://images.unsplash.com/photo-1624561172888-ac93c696e10c?auto=format&fit=crop&w=900&q=80" alt="Gediyon Adamu portrait" class="w-full h-[440px] object-cover rounded-2xl" />
           </div>
-        </div>
+        </a>
       </div>
     </section>
 
     <section id="services" class="py-24 bg-white">
       <div class="max-w-7xl mx-auto px-4 lg:px-6">
-        <h2 class="text-4xl md:text-5xl font-bold text-navy text-center reveal">Premium Consultancy Services</h2>
-        <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-6 mt-12">
-          <article class="service-card glass rounded-2xl p-6 hover:shadow-glow hover:-translate-y-1 transition"><h3 class="font-semibold text-xl text-navy">Student Visa Consultancy</h3><p class="text-gray-700 mt-3">Comprehensive guidance for students targeting global academic pathways.</p></article>
-          <article class="service-card glass rounded-2xl p-6 hover:shadow-glow hover:-translate-y-1 transition"><h3 class="font-semibold text-xl text-navy">Tourist Visa Consultancy</h3><p class="text-gray-700 mt-3">Clear, precise planning for compliant and confident travel approvals.</p></article>
-          <article class="service-card glass rounded-2xl p-6 hover:shadow-glow hover:-translate-y-1 transition"><h3 class="font-semibold text-xl text-navy">Document Preparation & Interview Coaching</h3><p class="text-gray-700 mt-3">Detail-driven documentation and practical interview readiness programs.</p></article>
-          <article class="service-card glass rounded-2xl p-6 hover:shadow-glow hover:-translate-y-1 transition"><h3 class="font-semibold text-xl text-navy">University Admission Support</h3><p class="text-gray-700 mt-3">Structured admissions guidance aligned to your profile and destination.</p></article>
+        <h2 class="reveal text-4xl md:text-5xl text-center text-navy font-bold">Premium Consultancy Services</h2>
+        <div class="mt-12 grid md:grid-cols-2 xl:grid-cols-4 gap-6">
+          <article class="service-card reveal glass rounded-2xl p-6 hover:-translate-y-1 hover:shadow-glow transition"><h3 class="font-semibold text-xl text-navy">Student Visa Consultancy</h3><p class="mt-3 text-gray-700">Priority support for international academic pathways and embassy readiness.</p></article>
+          <article class="service-card reveal glass rounded-2xl p-6 hover:-translate-y-1 hover:shadow-glow transition"><h3 class="font-semibold text-xl text-navy">Tourist Visa Consultancy</h3><p class="mt-3 text-gray-700">Precise planning for trusted, compliant and efficient travel visa processing.</p></article>
+          <article class="service-card reveal glass rounded-2xl p-6 hover:-translate-y-1 hover:shadow-glow transition"><h3 class="font-semibold text-xl text-navy">Document Preparation & Interview Coaching</h3><p class="mt-3 text-gray-700">Document quality assurance with scenario-based interview practice sessions.</p></article>
+          <article class="service-card reveal glass rounded-2xl p-6 hover:-translate-y-1 hover:shadow-glow transition"><h3 class="font-semibold text-xl text-navy">University Admission Support</h3><p class="mt-3 text-gray-700">Structured guidance for program selection, profile positioning, and admissions.</p></article>
         </div>
       </div>
     </section>
 
     <section id="destinations" class="py-24">
       <div class="max-w-7xl mx-auto px-4 lg:px-6">
-        <h2 class="text-4xl md:text-5xl font-bold text-center text-navy reveal">Your Gateway to the World.</h2>
-        <p class="text-center mt-4 text-gray-700 text-lg reveal">We secure visas for every country worldwide, with proven expertise in these top destinations.</p>
-
-        <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-5 auto-rows-[220px]">
-          <article class="country-card reveal relative rounded-2xl overflow-hidden sm:row-span-2 transition duration-500"><img class="country-media absolute inset-0 w-full h-full object-cover" src="https://images.unsplash.com/photo-1485738422979-f5c462d49f74?auto=format&fit=crop&w=900&q=80" alt="USA destination" /><div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div><div class="absolute bottom-4 left-4 text-white"><h3 class="font-semibold text-xl">USA</h3><p class="pulse text-sm">Success Pulse: 94%</p></div></article>
-          <article class="country-card reveal relative rounded-2xl overflow-hidden transition duration-500"><img class="country-media absolute inset-0 w-full h-full object-cover" src="https://images.unsplash.com/photo-1529260830199-42c24126f198?auto=format&fit=crop&w=900&q=80" alt="Italy destination" /><div class="absolute inset-0 bg-gradient-to-t from-black/65 to-transparent"></div><div class="absolute bottom-4 left-4 text-white"><h3 class="font-semibold text-xl">Italy</h3><p class="pulse text-sm">Success Pulse: 96%</p></div></article>
-          <article class="country-card reveal relative rounded-2xl overflow-hidden transition duration-500"><img class="country-media absolute inset-0 w-full h-full object-cover" src="https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=900&q=80" alt="Austria destination" /><div class="absolute inset-0 bg-gradient-to-t from-black/65 to-transparent"></div><div class="absolute bottom-4 left-4 text-white"><h3 class="font-semibold text-xl">Austria</h3><p class="pulse text-sm">Success Pulse: 95%</p></div></article>
-          <article class="country-card reveal relative rounded-2xl overflow-hidden sm:row-span-2 transition duration-500"><img class="country-media absolute inset-0 w-full h-full object-cover" src="https://images.unsplash.com/photo-1508804185872-d7badad00f7d?auto=format&fit=crop&w=900&q=80" alt="China destination" /><div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div><div class="absolute bottom-4 left-4 text-white"><h3 class="font-semibold text-xl">China</h3><p class="pulse text-sm">Success Pulse: 93%</p></div></article>
-          <article class="country-card reveal relative rounded-2xl overflow-hidden transition duration-500"><img class="country-media absolute inset-0 w-full h-full object-cover" src="https://images.unsplash.com/photo-1431274172761-fca41d930114?auto=format&fit=crop&w=900&q=80" alt="France destination" /><div class="absolute inset-0 bg-gradient-to-t from-black/65 to-transparent"></div><div class="absolute bottom-4 left-4 text-white"><h3 class="font-semibold text-xl">France</h3><p class="pulse text-sm">Success Pulse: 95%</p></div></article>
-          <article class="country-card reveal relative rounded-2xl overflow-hidden transition duration-500"><img class="country-media absolute inset-0 w-full h-full object-cover" src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&w=900&q=80" alt="Germany destination" /><div class="absolute inset-0 bg-gradient-to-t from-black/65 to-transparent"></div><div class="absolute bottom-4 left-4 text-white"><h3 class="font-semibold text-xl">Germany</h3><p class="pulse text-sm">Success Pulse: 97%</p></div></article>
-          <article class="country-card reveal relative rounded-2xl overflow-hidden transition duration-500"><img class="country-media absolute inset-0 w-full h-full object-cover" src="https://images.unsplash.com/photo-1533929736458-ca588d08c8be?auto=format&fit=crop&w=900&q=80" alt="UK destination" /><div class="absolute inset-0 bg-gradient-to-t from-black/65 to-transparent"></div><div class="absolute bottom-4 left-4 text-white"><h3 class="font-semibold text-xl">UK</h3><p class="pulse text-sm">Success Pulse: 94%</p></div></article>
-          <article class="country-card reveal relative rounded-2xl overflow-hidden transition duration-500"><img class="country-media absolute inset-0 w-full h-full object-cover" src="https://images.unsplash.com/photo-1604608672516-f1b1b66aa8ad?auto=format&fit=crop&w=900&q=80" alt="Romania destination" /><div class="absolute inset-0 bg-gradient-to-t from-black/65 to-transparent"></div><div class="absolute bottom-4 left-4 text-white"><h3 class="font-semibold text-xl">Romania</h3><p class="pulse text-sm">Success Pulse: 92%</p></div></article>
-        </div>
+        <h2 class="reveal text-4xl md:text-5xl text-navy text-center font-bold">Your Gateway to the World.</h2>
+        <p class="reveal text-center mt-4 text-lg text-gray-700">We secure visas for every country worldwide, with proven expertise in these top destinations.</p>
+        <div id="destinationGrid" class="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-5 auto-rows-[220px]"></div>
         <p class="text-center text-xl mt-8 font-medium text-navy">+ 100+ additional countries worldwide</p>
       </div>
     </section>
 
     <section id="impact" class="py-24 bg-white">
       <div class="max-w-7xl mx-auto px-4 lg:px-6">
-        <h2 class="text-4xl md:text-5xl text-navy text-center font-bold reveal">Our Impact / Success Stories</h2>
-        <p class="text-center mt-5 text-2xl">Past Achievement: <span id="impactCount" class="font-bold text-accent">0</span> Visas Secured</p>
+        <h2 class="reveal text-4xl md:text-5xl text-center text-navy font-bold">Our Impact / Success Stories</h2>
+        <p class="text-center mt-5 text-2xl">Past Achievement: <span id="impactCount" class="text-accent font-bold">0</span> Visas Secured</p>
         <div class="mt-10 overflow-hidden rounded-3xl">
           <div id="storyCarousel" class="flex transition-transform duration-700">
-            <article class="min-w-full glass p-8 md:p-10">
-              <img src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?auto=format&fit=crop&w=300&q=80" class="w-16 h-16 rounded-full object-cover" alt="testimonial profile" />
-              <p class="mt-4 text-lg">“The strategy sessions gave me confidence and precision for my student visa process.”</p>
-              <p class="mt-3 font-semibold">Liya M. • Italy</p>
-            </article>
-            <article class="min-w-full glass p-8 md:p-10">
-              <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80" class="w-16 h-16 rounded-full object-cover" alt="testimonial profile" />
-              <p class="mt-4 text-lg">“Every document was handled with international-level professionalism from start to finish.”</p>
-              <p class="mt-3 font-semibold">Abel T. • Germany</p>
-            </article>
-            <article class="min-w-full glass p-8 md:p-10">
-              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=300&q=80" class="w-16 h-16 rounded-full object-cover" alt="testimonial profile" />
-              <p class="mt-4 text-lg">“Outstanding interview coaching and practical guidance tailored to my destination.”</p>
-              <p class="mt-3 font-semibold">Sara K. • UK</p>
-            </article>
+            <article class="min-w-full glass p-8"><img class="w-16 h-16 rounded-full object-cover" src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?auto=format&fit=crop&w=300&q=80" alt="profile"/><p class="mt-4 text-lg">“The process was strategic, professional, and perfectly organized.”</p><p class="mt-2 font-semibold">Liya M. • Italy</p></article>
+            <article class="min-w-full glass p-8"><img class="w-16 h-16 rounded-full object-cover" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80" alt="profile"/><p class="mt-4 text-lg">“Excellent consultancy standards and outstanding interview coaching.”</p><p class="mt-2 font-semibold">Abel T. • Germany</p></article>
+            <article class="min-w-full glass p-8"><img class="w-16 h-16 rounded-full object-cover" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=300&q=80" alt="profile"/><p class="mt-4 text-lg">“I felt supported from planning through final visa approval.”</p><p class="mt-2 font-semibold">Sara K. • UK</p></article>
           </div>
         </div>
       </div>
@@ -207,52 +170,39 @@
 
     <section id="how" class="py-24 bg-navy text-white">
       <div class="max-w-7xl mx-auto px-4 lg:px-6">
-        <h2 class="text-4xl md:text-5xl font-bold text-center reveal">How We Secure Your Visa.</h2>
+        <h2 class="reveal text-4xl md:text-5xl text-center font-bold">How We Secure Your Visa.</h2>
         <div class="relative mt-16">
           <div class="absolute left-0 right-0 top-6 h-1 bg-white/20"></div>
           <div class="grid md:grid-cols-6 gap-5 relative z-10">
-            <article class="step-card text-center reveal"><div class="step-circle mx-auto w-12 h-12 rounded-full bg-white/20 flex items-center justify-center font-semibold">01</div><h3 class="mt-4 font-semibold">Initial Consultation</h3><p class="text-white/80 text-sm mt-2">Define goals, timeline, and target country.</p></article>
-            <article class="step-card text-center reveal"><div class="step-circle mx-auto w-12 h-12 rounded-full bg-white/20 flex items-center justify-center font-semibold">02</div><h3 class="mt-4 font-semibold">Strategy & Planning</h3><p class="text-white/80 text-sm mt-2">Build your customized visa success roadmap.</p></article>
-            <article class="step-card text-center reveal"><div class="step-circle mx-auto w-12 h-12 rounded-full bg-white/20 flex items-center justify-center font-semibold">03</div><h3 class="mt-4 font-semibold">Document Prep</h3><p class="text-white/80 text-sm mt-2">Prepare and refine all required documents.</p></article>
-            <article class="step-card text-center reveal"><div class="step-circle mx-auto w-12 h-12 rounded-full bg-white/20 flex items-center justify-center font-semibold">04</div><h3 class="mt-4 font-semibold">Application Submission</h3><p class="text-white/80 text-sm mt-2">Submit with complete accuracy and clarity.</p></article>
-            <article class="step-card text-center reveal"><div class="step-circle mx-auto w-12 h-12 rounded-full bg-white/20 flex items-center justify-center font-semibold">05</div><h3 class="mt-4 font-semibold">Interview Coaching</h3><p class="text-white/80 text-sm mt-2">Practice with targeted mock interview drills.</p></article>
-            <article class="step-card text-center reveal"><div class="step-circle mx-auto w-12 h-12 rounded-full bg-white/20 flex items-center justify-center font-semibold">06</div><h3 class="mt-4 font-semibold">Visa Approval</h3><p class="text-white/80 text-sm mt-2">Travel-ready support for your next chapter.</p></article>
+            <article class="step-card reveal text-center"><div class="step-circle mx-auto w-12 h-12 rounded-full bg-white/20 flex items-center justify-center font-semibold">01</div><h3 class="mt-4 font-semibold">Initial Consultation</h3><p class="text-white/80 text-sm mt-2">Define goals and destination fit.</p></article>
+            <article class="step-card reveal text-center"><div class="step-circle mx-auto w-12 h-12 rounded-full bg-white/20 flex items-center justify-center font-semibold">02</div><h3 class="mt-4 font-semibold">Strategy & Planning</h3><p class="text-white/80 text-sm mt-2">Create your full visa roadmap.</p></article>
+            <article class="step-card reveal text-center"><div class="step-circle mx-auto w-12 h-12 rounded-full bg-white/20 flex items-center justify-center font-semibold">03</div><h3 class="mt-4 font-semibold">Document Prep</h3><p class="text-white/80 text-sm mt-2">Build complete, accurate file set.</p></article>
+            <article class="step-card reveal text-center"><div class="step-circle mx-auto w-12 h-12 rounded-full bg-white/20 flex items-center justify-center font-semibold">04</div><h3 class="mt-4 font-semibold">Application Submission</h3><p class="text-white/80 text-sm mt-2">Submit with precision and timing.</p></article>
+            <article class="step-card reveal text-center"><div class="step-circle mx-auto w-12 h-12 rounded-full bg-white/20 flex items-center justify-center font-semibold">05</div><h3 class="mt-4 font-semibold">Interview Coaching</h3><p class="text-white/80 text-sm mt-2">Train with realistic scenarios.</p></article>
+            <article class="step-card reveal text-center"><div class="step-circle mx-auto w-12 h-12 rounded-full bg-white/20 flex items-center justify-center font-semibold">06</div><h3 class="mt-4 font-semibold">Visa Approval</h3><p class="text-white/80 text-sm mt-2">Final guidance for departure.</p></article>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="py-24 bg-white">
-      <div class="max-w-7xl mx-auto px-4 lg:px-6">
-        <h2 class="text-4xl md:text-5xl font-bold text-center text-navy reveal">Why Choose Us</h2>
-        <div class="mt-10 grid md:grid-cols-5 gap-4">
-          <div class="glass rounded-xl p-5 text-center">Proven Track Record</div>
-          <div class="glass rounded-xl p-5 text-center">Located in Addis Ababa</div>
-          <div class="glass rounded-xl p-5 text-center">Personalized Guidance</div>
-          <div class="glass rounded-xl p-5 text-center">International Standards</div>
-          <div class="glass rounded-xl p-5 text-center">Global Network</div>
         </div>
       </div>
     </section>
 
     <section id="testimonials" class="py-24">
       <div class="max-w-7xl mx-auto px-4 lg:px-6">
-        <h2 class="text-4xl md:text-5xl font-bold text-center text-navy reveal">Testimonials</h2>
+        <h2 class="reveal text-4xl md:text-5xl text-center text-navy font-bold">Testimonials</h2>
         <div class="mt-10 grid md:grid-cols-3 gap-5">
-          <blockquote class="glass rounded-2xl p-6 reveal">“Premium process, clear communication, excellent outcomes.”<footer class="mt-3 text-sm">— Nahom B.</footer></blockquote>
-          <blockquote class="glass rounded-2xl p-6 reveal">“Broad Mobility made a complex journey feel organized and achievable.”<footer class="mt-3 text-sm">— Bethel R.</footer></blockquote>
-          <blockquote class="glass rounded-2xl p-6 reveal">“Professional consultancy I confidently recommend in Addis Ababa.”<footer class="mt-3 text-sm">— Yosef G.</footer></blockquote>
+          <blockquote class="reveal glass rounded-2xl p-6">“I highly recommend Broad Mobility for anyone seeking trusted visa guidance.”<footer class="mt-3 text-sm">— Nahom B.</footer></blockquote>
+          <blockquote class="reveal glass rounded-2xl p-6">“Clear communication, premium service quality, and confidence from day one.”<footer class="mt-3 text-sm">— Bethel R.</footer></blockquote>
+          <blockquote class="reveal glass rounded-2xl p-6">“Professional consultancy from Addis Ababa with true global standards.”<footer class="mt-3 text-sm">— Yosef G.</footer></blockquote>
         </div>
       </div>
     </section>
 
     <section id="faq" class="py-24 bg-white">
       <div class="max-w-4xl mx-auto px-4 lg:px-6">
-        <h2 class="text-4xl md:text-5xl text-center text-navy font-bold reveal">FAQ</h2>
-        <div class="space-y-3 mt-8">
-          <div class="glass rounded-xl p-4"><button class="faq-btn w-full text-left font-semibold">Do you handle student and tourist visas worldwide?</button><div class="faq-content"><p class="pt-3 text-gray-700">Yes. We support student and tourist visa pathways for destinations across the globe.</p></div></div>
-          <div class="glass rounded-xl p-4"><button class="faq-btn w-full text-left font-semibold">Do you support document and interview preparation?</button><div class="faq-content"><p class="pt-3 text-gray-700">Absolutely. We provide structured document preparation and focused interview coaching.</p></div></div>
-          <div class="glass rounded-xl p-4"><button class="faq-btn w-full text-left font-semibold">Where is Broad Mobility located?</button><div class="faq-content"><p class="pt-3 text-gray-700">Bole Road, Addis Ababa, Ethiopia (placeholder address).</p></div></div>
+        <h2 class="reveal text-4xl md:text-5xl text-center text-navy font-bold">FAQ</h2>
+        <div class="mt-8 space-y-3">
+          <div class="glass rounded-xl p-4"><button class="faq-btn w-full text-left font-semibold">Do you handle student and tourist visas worldwide?</button><div class="faq-content"><p class="pt-3 text-gray-700">Yes, we support visa consultancy pathways for countries worldwide.</p></div></div>
+          <div class="glass rounded-xl p-4"><button class="faq-btn w-full text-left font-semibold">Can you support document and interview preparation?</button><div class="faq-content"><p class="pt-3 text-gray-700">Yes. We provide full document optimization and interview coaching.</p></div></div>
+          <div class="glass rounded-xl p-4"><button class="faq-btn w-full text-left font-semibold">Where is Broad Mobility located?</button><div class="faq-content"><p class="pt-3 text-gray-700">Bole Road, Addis Ababa, Ethiopia (placeholder).</p></div></div>
         </div>
       </div>
     </section>
@@ -260,96 +210,172 @@
 
   <footer id="contact" class="bg-navy text-white py-16">
     <div class="max-w-7xl mx-auto px-4 lg:px-6 grid md:grid-cols-3 gap-8">
-      <div>
-        <h3 class="font-semibold text-xl">Broad Mobility</h3>
-        <p class="mt-3 text-white/80">Bole Road, Addis Ababa, Ethiopia (placeholder)</p>
-        <p class="text-white/80">Phone: +251 9XX XXX XXX</p>
-        <p class="text-white/80">Email: contact@broadmobility.com</p>
-        <p class="text-white/80">Telegram: @broadmobility</p>
-      </div>
-      <div>
-        <h4 class="font-semibold">Quick Links</h4>
-        <ul class="mt-3 space-y-2 text-white/80">
-          <li><a href="#services">Services</a></li>
-          <li><a href="#destinations">Destinations</a></li>
-          <li><a href="#how">How It Works</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4 class="font-semibold">Ethiopian Roots, Global Vision</h4>
-        <p class="mt-3 text-white/80">Proudly serving from the heart of Ethiopia.</p>
-      </div>
+      <div><h3 class="font-semibold text-xl">Broad Mobility</h3><p class="mt-3 text-white/80">Bole Road, Addis Ababa, Ethiopia (placeholder)</p><p class="text-white/80">Phone: +251 9XX XXX XXX</p><p class="text-white/80">Email: contact@broadmobility.com</p><p class="text-white/80">Telegram: @broadmobility</p></div>
+      <div><h4 class="font-semibold">Quick Links</h4><ul class="mt-3 space-y-2 text-white/80"><li><a href="#services">Services</a></li><li><a href="#destinations">Destinations</a></li><li><a href="#how">How It Works</a></li></ul></div>
+      <div><h4 class="font-semibold">Proudly Ethiopian</h4><p class="mt-3 text-white/80">Proudly serving from the heart of Ethiopia.</p></div>
     </div>
     <p class="text-center text-white/60 text-sm mt-10">Copyright © 2026 Broad Mobility. All rights reserved.</p>
   </footer>
 
+  <div id="countryModal" class="hidden fixed inset-0 z-[100] modal-overlay">
+    <div class="particle-bg"></div>
+    <div class="relative max-w-6xl mx-auto h-full overflow-y-auto px-4 py-10">
+      <button class="modal-close absolute top-6 right-6 text-white text-4xl">×</button>
+      <div id="countryModalCard" class="opacity-0 scale-95 bg-white/95 rounded-3xl overflow-hidden shadow-2xl">
+        <img id="countryHero" class="w-full h-[280px] md:h-[360px] object-cover" alt="country hero" />
+        <div class="p-7 md:p-10">
+          <h3 id="countryTitle" class="text-4xl md:text-5xl text-navy font-bold"></h3>
+          <p id="countryWhy" class="mt-4 text-gray-700 text-lg"></p>
+          <h4 class="mt-8 text-2xl font-semibold text-navy">Top Prestigious Universities</h4>
+          <div id="universityGrid" class="mt-5 grid md:grid-cols-2 gap-4"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="consultModal" class="hidden fixed inset-0 z-[110] modal-overlay">
+    <div class="particle-bg"></div>
+    <div class="relative max-w-3xl mx-auto h-full overflow-y-auto px-4 py-10">
+      <button class="consult-close absolute top-6 right-6 text-white text-4xl">×</button>
+      <div id="consultCard" class="opacity-0 scale-95 rounded-3xl bg-[#071A2E] border border-white/10 p-6 md:p-8 text-white">
+        <h3 class="text-3xl md:text-4xl font-bold">Your Journey to Study Abroad Starts Here!</h3>
+        <p class="mt-2 text-white/75">Fill the form and one of our consultants will reach you shortly.</p>
+        <form class="mt-6 space-y-4" id="consultForm">
+          <div class="grid md:grid-cols-2 gap-4">
+            <label class="block">Full Name *<input required class="mt-1 w-full rounded-lg bg-white/10 border border-white/15 px-3 py-2" /></label>
+            <label class="block">Email *<input required type="email" class="mt-1 w-full rounded-lg bg-white/10 border border-white/15 px-3 py-2" /></label>
+            <label class="block">Phone *<input required class="mt-1 w-full rounded-lg bg-white/10 border border-white/15 px-3 py-2" /></label>
+            <label class="block">Secondary Phone (Optional: Parent’s or Friend’s Phone)<input class="mt-1 w-full rounded-lg bg-white/10 border border-white/15 px-3 py-2" /></label>
+          </div>
+
+          <label class="block">Application Level *
+            <select id="appLevel" required class="mt-1 w-full rounded-lg bg-white/10 border border-white/15 px-3 py-2">
+              <option value="">Select level</option><option>Bachelor</option><option>Masters</option><option>Others</option>
+            </select>
+          </label>
+
+          <div id="dynamicUploads" class="space-y-3"></div>
+
+          <div class="grid md:grid-cols-2 gap-4">
+            <label class="block">Application Area (Field) *<input required class="mt-1 w-full rounded-lg bg-white/10 border border-white/15 px-3 py-2" /></label>
+            <label class="block">Countries Interested In *<input required placeholder="Poland, Turkey, Hungary" class="mt-1 w-full rounded-lg bg-white/10 border border-white/15 px-3 py-2" /></label>
+            <label class="block">How Did You Hear About Us? *
+              <select required class="mt-1 w-full rounded-lg bg-white/10 border border-white/15 px-3 py-2"><option value="">Select source</option><option>Instagram</option><option>Telegram</option><option>Referral</option><option>Search</option><option>Other</option></select>
+            </label>
+            <label class="block">PromoCode (If Any)<input class="mt-1 w-full rounded-lg bg-white/10 border border-white/15 px-3 py-2" /></label>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-4">
+            <label class="drop-zone rounded-xl p-4 block">High School Transcript<input type="file" class="mt-2 w-full text-sm" multiple /></label>
+            <label class="drop-zone rounded-xl p-4 block">Passport<input type="file" class="mt-2 w-full text-sm" multiple /></label>
+          </div>
+          <p class="text-sm text-white/70">Maximum Combined Size Must Be Less Than 10MB</p>
+
+          <button class="w-full rounded-xl bg-orange-500 hover:bg-orange-400 active:scale-[.98] transition py-3 text-lg font-semibold shadow-[0_0_25px_rgba(249,115,22,.45)]" type="submit">Submit Application</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
   <script>
     gsap.registerPlugin(ScrollTrigger);
 
-    const heroTitle = document.getElementById('heroTitle');
-    heroTitle.innerHTML = heroTitle.textContent.split(' ').map(w => `<span class="inline-block mr-3">${w}</span>`).join('');
-    gsap.from('#heroTitle span', { y: 70, opacity: 0, rotate: 5, duration: .75, stagger: .05, ease: 'back.out(1.6)' });
-    gsap.to('#heroTitle', { letterSpacing: '0.02em', scale: 1.02, scrollTrigger: { trigger: '#home', start: 'top top', end: 'bottom top', scrub: true } });
+    const destinations = [
+      { key:'usa',name:'USA',flag:'🇺🇸',image:'https://images.unsplash.com/photo-1485738422979-f5c462d49f74?auto=format&fit=crop&w=1200&q=80',pulse:'94%',why:'The USA offers world-leading research ecosystems, innovation hubs, and flexible academic pathways for global students.',unis:[['Harvard University','Ivy League excellence. Alumni: Barack Obama, Mark Zuckerberg.'],['Stanford University','Silicon Valley innovation. Alumni: Sundar Pichai, Reed Hastings.'],['MIT','Top engineering and science institution. Alumni: Kofi Annan.'],['NYU','Global city campus in New York. Alumni: Lady Gaga.']] },
+      { key:'italy',name:'Italy',flag:'🇮🇹',image:'https://images.unsplash.com/photo-1529260830199-42c24126f198?auto=format&fit=crop&w=1200&q=80',pulse:'96%',why:'Italy combines historic academic institutions, design leadership, and accessible European cultural immersion.',unis:[['University of Bologna','One of the oldest universities globally. Alumni: Copernicus.'],['Politecnico di Milano','Leading engineering and architecture school. Alumni: Renzo Piano.']] },
+      { key:'austria',name:'Austria',flag:'🇦🇹',image:'https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=1200&q=80',pulse:'95%',why:'Austria provides a high quality of life, strong public research institutions, and central European access.',unis:[['University of Vienna','Historic university with broad disciplines. Alumni: Sigmund Freud.'],['TU Wien','Top technical university with innovation focus. Alumni: Karl von Frisch.']] },
+      { key:'china',name:'China',flag:'🇨🇳',image:'https://images.unsplash.com/photo-1508804185872-d7badad00f7d?auto=format&fit=crop&w=1200&q=80',pulse:'93%',why:'China blends world-class modern campuses with advanced technology ecosystems and scholarship opportunities.',unis:[['Tsinghua University','Elite engineering and policy institution. Alumni: Xi Jinping.'],['Peking University','Top-ranked comprehensive university. Alumni: Li Keqiang.']] },
+      { key:'france',name:'France',flag:'🇫🇷',image:'https://images.unsplash.com/photo-1431274172761-fca41d930114?auto=format&fit=crop&w=1200&q=80',pulse:'95%',why:'France offers high academic quality, renowned research, and globally recognized programs in arts and sciences.',unis:[['Sorbonne University','Prestigious humanities and sciences center. Alumni: Marie Curie.'],['École Polytechnique','Top STEM grande école. Alumni: Henri Becquerel.']] },
+      { key:'germany',name:'Germany',flag:'🇩🇪',image:'https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&w=1200&q=80',pulse:'97%',why:'Germany is known for engineering strength, research quality, and strong post-study opportunities.',unis:[['Technical University of Munich','World-class technical research university. Alumni: Rudolf Diesel.'],['Heidelberg University','Germany’s oldest top university. Alumni: Max Weber.']] },
+      { key:'uk',name:'UK',flag:'🇬🇧',image:'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=1200&q=80',pulse:'94%',why:'The UK delivers globally respected degrees, intensive one-year masters options, and elite academic networks.',unis:[['University of Oxford','Historic global academic leader. Alumni: Malala Yousafzai.'],['University of Cambridge','Top research university. Alumni: Isaac Newton.'],['Imperial College London','STEM excellence in London. Alumni: Alexander Fleming.']] },
+      { key:'romania',name:'Romania',flag:'🇷🇴',image:'https://images.unsplash.com/photo-1628432372823-7ef59e72f9d6?auto=format&fit=crop&w=1200&q=80',pulse:'92%',why:'Romania offers affordable European education with growing international programs and vibrant urban student life.',unis:[['University of Bucharest','Leading Romanian comprehensive university. Alumni: Mircea Eliade.'],['Babeș-Bolyai University','Top multicultural institution in Cluj-Napoca. Alumni: Emil Boc.']] }
+    ];
 
-    gsap.utils.toArray('.reveal, .service-card, .country-card, .step-card, blockquote').forEach((el, i) => {
-      gsap.from(el, { y: 65, opacity: 0, duration: .8, delay: i * 0.03, scrollTrigger: { trigger: el, start: 'top 86%' } });
+    const grid = document.getElementById('destinationGrid');
+    destinations.forEach((d,idx)=>{
+      const tall = idx===0||idx===3 ? 'sm:row-span-2' : '';
+      grid.insertAdjacentHTML('beforeend', `<article class="country-card reveal ${tall} relative rounded-2xl overflow-hidden transition duration-500 cursor-pointer" data-country="${d.key}"><img class="country-image absolute inset-0 w-full h-full object-cover" src="${d.image}" alt="${d.name}"/><div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div><div class="absolute bottom-4 left-4 text-white"><h3 class="font-semibold text-xl">${d.name}</h3><p class="country-pulse text-sm">Success Pulse: ${d.pulse}</p></div></article>`);
     });
 
-    document.querySelectorAll('.counter').forEach(el => {
-      const target = +el.dataset.target;
-      ScrollTrigger.create({
-        trigger: el,
-        once: true,
-        start: 'top 90%',
-        onEnter: () => {
-          const obj = { val: 0 };
-          gsap.to(obj, { val: target, duration: 1.8, ease: 'power2.out', onUpdate: () => el.textContent = Math.floor(obj.val) });
+    const title = document.getElementById('heroTitle');
+    title.innerHTML = title.textContent.split(' ').map(w=>`<span class="inline-block mr-3">${w}</span>`).join('');
+    gsap.from('#heroTitle span',{y:70,opacity:0,rotate:4,duration:.75,stagger:.05,ease:'back.out(1.6)'});
+    gsap.to('#heroTitle',{letterSpacing:'0.02em',scale:1.02,scrollTrigger:{trigger:'#home',start:'top top',end:'bottom top',scrub:true}});
+
+    gsap.utils.toArray('.reveal,.service-card,.country-card,.step-card,blockquote').forEach((el,i)=>{
+      gsap.from(el,{y:65,opacity:0,duration:.8,delay:i*.03,scrollTrigger:{trigger:el,start:'top 86%'}})
+    });
+
+    document.querySelectorAll('.counter').forEach(el=>{
+      const target=+el.dataset.target;
+      ScrollTrigger.create({trigger:el,start:'top 90%',once:true,onEnter:()=>{const o={v:0};gsap.to(o,{v:target,duration:1.8,onUpdate:()=>el.textContent=Math.floor(o.v)})}})
+    });
+
+    ScrollTrigger.create({trigger:'#impact',start:'top 75%',once:true,onEnter:()=>{const o={v:0};gsap.to(o,{v:51,duration:2.1,onUpdate:()=>impactCount.textContent=Math.floor(o.v)});gsap.to('#timelineFill',{width:'100%',duration:2.2})}});
+
+    window.addEventListener('scroll',()=>{
+      const p=(window.scrollY/(document.body.scrollHeight-innerHeight))*100;
+      progressLine.style.width=`${p}%`;
+      header.classList.toggle('scale-[.97]',window.scrollY>40);
+      [...document.querySelectorAll('main section')].forEach(sec=>{
+        if(window.scrollY>=sec.offsetTop-160&&window.scrollY<sec.offsetTop+sec.offsetHeight-160){
+          document.querySelectorAll('.nav-link').forEach(a=>a.classList.toggle('text-accent',a.getAttribute('href')==='#'+sec.id));
         }
       });
     });
 
-    ScrollTrigger.create({
-      trigger: '#impact',
-      once: true,
-      start: 'top 75%',
-      onEnter: () => {
-        const obj = { val: 0 };
-        gsap.to(obj, { val: 51, duration: 2.1, ease: 'power2.out', onUpdate: () => document.getElementById('impactCount').textContent = Math.floor(obj.val) });
-        gsap.to('#timelineFill', { width: '100%', duration: 2.2, ease: 'power2.out' });
-      }
-    });
-
-    window.addEventListener('scroll', () => {
-      const p = (window.scrollY / (document.body.scrollHeight - innerHeight)) * 100;
-      document.getElementById('progressLine').style.width = `${p}%`;
-      document.getElementById('header').classList.toggle('scale-[.97]', window.scrollY > 40);
-      const sections = [...document.querySelectorAll('main section')];
-      const links = [...document.querySelectorAll('.nav-link')];
-      sections.forEach(sec => {
-        if (window.scrollY >= sec.offsetTop - 160 && window.scrollY < sec.offsetTop + sec.offsetHeight - 160) {
-          links.forEach(link => link.classList.toggle('text-accent', link.getAttribute('href') === '#' + sec.id));
-        }
-      });
-    });
-
-    const faqButtons = document.querySelectorAll('.faq-btn');
-    faqButtons.forEach(btn => btn.addEventListener('click', () => {
-      const panel = btn.nextElementSibling;
-      const active = panel.style.maxHeight;
-      document.querySelectorAll('.faq-content').forEach(item => item.style.maxHeight = null);
-      panel.style.maxHeight = active ? null : panel.scrollHeight + 'px';
+    document.querySelectorAll('.faq-btn').forEach(btn=>btn.addEventListener('click',()=>{
+      const panel=btn.nextElementSibling,open=panel.style.maxHeight;
+      document.querySelectorAll('.faq-content').forEach(p=>p.style.maxHeight=null);
+      panel.style.maxHeight=open?null:panel.scrollHeight+'px';
     }));
 
-    const mobileMenu = document.getElementById('mobileMenu');
-    document.getElementById('menuBtn').onclick = () => mobileMenu.classList.remove('hidden');
-    document.getElementById('closeMenu').onclick = () => mobileMenu.classList.add('hidden');
-    document.querySelectorAll('.mobile-link').forEach(link => link.onclick = () => mobileMenu.classList.add('hidden'));
+    menuBtn.onclick=()=>mobileMenu.classList.remove('hidden');
+    closeMenu.onclick=()=>mobileMenu.classList.add('hidden');
+    document.querySelectorAll('.mobile-link').forEach(l=>l.onclick=()=>mobileMenu.classList.add('hidden'));
 
-    let currentSlide = 0;
-    setInterval(() => {
-      currentSlide = (currentSlide + 1) % 3;
-      document.getElementById('storyCarousel').style.transform = `translateX(-${currentSlide * 100}%)`;
-    }, 4000);
+    let s=0;setInterval(()=>{s=(s+1)%3;storyCarousel.style.transform=`translateX(-${s*100}%)`},4000);
+
+    const countryModal = document.getElementById('countryModal');
+    const countryCard = document.getElementById('countryModalCard');
+    const countryHero = document.getElementById('countryHero');
+    const countryTitle = document.getElementById('countryTitle');
+    const countryWhy = document.getElementById('countryWhy');
+    const universityGrid = document.getElementById('universityGrid');
+
+    grid.addEventListener('click',(e)=>{
+      const card=e.target.closest('[data-country]'); if(!card) return;
+      const data = destinations.find(d=>d.key===card.dataset.country);
+      countryHero.src=data.image;
+      countryTitle.textContent=`${data.flag} ${data.name}`;
+      countryWhy.textContent=`Why Students Choose ${data.name}: ${data.why}`;
+      universityGrid.innerHTML = data.unis.map(u=>`<article class="glass rounded-xl p-4 hover:-translate-y-1 hover:shadow-glow transition"><h5 class="font-semibold text-navy">${u[0]}</h5><p class="text-sm text-gray-700 mt-2">${u[1]}</p></article>`).join('');
+      countryModal.classList.remove('hidden'); document.body.classList.add('modal-open');
+      gsap.fromTo(countryCard,{opacity:0,scale:.95,y:20},{opacity:1,scale:1,y:0,duration:.45,ease:'power2.out'});
+      gsap.from('#universityGrid article',{opacity:0,y:20,stagger:.08,duration:.4,delay:.15});
+    });
+
+    document.querySelector('.modal-close').onclick=()=>{gsap.to(countryCard,{opacity:0,scale:.95,duration:.25,onComplete:()=>{countryModal.classList.add('hidden');document.body.classList.remove('modal-open')}})};
+
+    const consultModal = document.getElementById('consultModal');
+    const consultCard = document.getElementById('consultCard');
+    const openConsult = ()=>{consultModal.classList.remove('hidden');document.body.classList.add('modal-open');gsap.fromTo(consultCard,{opacity:0,scale:.95,y:20},{opacity:1,scale:1,y:0,duration:.45});gsap.from('#consultForm > *',{opacity:0,y:16,stagger:.05,duration:.35,delay:.12});};
+    const closeConsult = ()=> gsap.to(consultCard,{opacity:0,scale:.95,duration:.25,onComplete:()=>{consultModal.classList.add('hidden');document.body.classList.remove('modal-open')}});
+    bookBtnHero.onclick=openConsult; bookBtnTop.onclick=openConsult; bookBtnMobile.onclick=()=>{mobileMenu.classList.add('hidden');openConsult();};
+    document.querySelector('.consult-close').onclick=closeConsult;
+
+    const dynamicUploads = document.getElementById('dynamicUploads');
+    const appLevelSelect = document.getElementById('appLevel');
+    appLevelSelect.addEventListener('change',()=>{
+      const v=appLevelSelect.value;
+      if(v==='Bachelor') dynamicUploads.innerHTML = `<label class="drop-zone rounded-xl p-4 block">Grade 10 & 12 National Exams<input type="file" class="mt-2 w-full text-sm" multiple /></label>`;
+      else if(v==='Masters') dynamicUploads.innerHTML = `<div class="grid md:grid-cols-2 gap-4"><label class="drop-zone rounded-xl p-4 block">Bachelor Degree Certificate<input type="file" class="mt-2 w-full text-sm" multiple /></label><label class="drop-zone rounded-xl p-4 block">Bachelor Transcript/Student Copy<input type="file" class="mt-2 w-full text-sm" multiple /></label></div>`;
+      else dynamicUploads.innerHTML = '';
+      gsap.from('#dynamicUploads .drop-zone',{opacity:0,y:10,stagger:.08,duration:.3});
+    });
+
+    const consultFormEl = document.getElementById('consultForm');
+    consultFormEl.addEventListener('submit',(e)=>{e.preventDefault();gsap.fromTo(e.submitter,{scale:1},{scale:.96,yoyo:true,repeat:1,duration:.09});});
   </script>
 </body>
 </html>
