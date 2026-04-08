@@ -48,6 +48,14 @@
     .country-image{transition:transform .65s ease}
     .country-pulse{opacity:0;transform:translateY(8px);transition:all .45s ease}
     .faq-content{max-height:0;overflow:hidden;transition:max-height .35s ease}
+    .faq-card{border:1.2px solid rgba(0,166,81,.45);border-radius:14px;transition:all .3s ease}
+    .faq-card:hover{transform:translateY(-2px) scale(1.01);box-shadow:0 0 0 2px rgba(0,166,81,.15),0 14px 24px rgba(0,166,81,.2)}
+    .footer-nav a{position:relative;display:inline-block}
+    .footer-nav a:after{content:"";position:absolute;left:0;bottom:-4px;width:0;height:2px;background:#00A651;box-shadow:0 0 10px rgba(0,166,81,.7);transition:width .25s ease}
+    .footer-nav a:hover:after{width:100%}
+    .social-float{animation:socialFloat 5s ease-in-out infinite}
+    .flow-line{position:relative;overflow:hidden}
+    .flow-line:after{content:"";position:absolute;left:-35%;top:0;height:100%;width:35%;background:linear-gradient(90deg,transparent,rgba(0,166,81,.75),transparent);animation:flow 3s linear infinite}
     .modal-open{overflow:hidden}
     .modal-overlay{background:rgba(0,18,38,.9);backdrop-filter:blur(10px)}
     .particle-bg{position:absolute;inset:0;background:radial-gradient(circle at 20% 20%,rgba(0,166,81,.22),transparent 45%),radial-gradient(circle at 80% 10%,rgba(242,201,76,.18),transparent 42%),radial-gradient(circle at 50% 80%,rgba(255,255,255,.08),transparent 42%);pointer-events:none}
@@ -67,6 +75,8 @@
     @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-16px)}}
     @keyframes logoPulse{0%,100%{transform:rotate(0) scale(1)}50%{transform:rotate(-2deg) scale(1.03)}}
     @keyframes premiumFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+    @keyframes socialFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+    @keyframes flow{to{left:100%}}
   </style>
 </head>
 <body>
@@ -144,7 +154,7 @@
         </div>
         <a href="https://www.linkedin.com/in/gediyon-adamu-yeshitila-080b90338" target="_blank" rel="noopener noreferrer" class="reveal block">
           <div class="glass p-4 rounded-3xl hover:shadow-glow transition">
-            <img src="https://i.imgur.com/bbiOPcf.jpeg" alt="Gediyon Adamu portrait" class="w-full h-[540px] object-contain object-center bg-slate-100 rounded-2xl" />
+            <img src="https://i.imgur.com/bbiOPcf.jpeg" alt="Gediyon Adamu portrait" class="w-full h-[520px] object-cover object-[center_8%] rounded-2xl" />
           </div>
         </a>
       </div>
@@ -187,9 +197,9 @@
 
     <section id="how" class="py-24 bg-navy text-white">
       <div class="max-w-7xl mx-auto px-4 lg:px-6">
-        <h2 class="reveal text-4xl md:text-5xl text-center font-bold">How We Secure Your Visa.</h2>
+        <h2 class="reveal text-4xl md:text-5xl text-center font-bold">How We <span class="text-accent">Secure Your Visa.</span></h2>
         <div class="relative mt-16">
-          <div class="absolute left-0 right-0 top-6 h-1 bg-white/20"></div>
+          <div class="absolute left-0 right-0 top-6 h-1 bg-white/20 flow-line"></div>
           <div class="grid md:grid-cols-6 gap-5 relative z-10">
             <article class="step-card reveal text-center"><div class="step-circle mx-auto w-12 h-12 rounded-full bg-white/20 flex items-center justify-center font-semibold">01</div><h3 class="mt-4 font-semibold">Initial Consultation</h3><p class="text-white/80 text-sm mt-2">Define goals and destination fit.</p></article>
             <article class="step-card reveal text-center"><div class="step-circle mx-auto w-12 h-12 rounded-full bg-white/20 flex items-center justify-center font-semibold">02</div><h3 class="mt-4 font-semibold">Strategy & Planning</h3><p class="text-white/80 text-sm mt-2">Create your full visa roadmap.</p></article>
@@ -215,11 +225,14 @@
 
     <section id="faq" class="py-24 bg-white">
       <div class="max-w-4xl mx-auto px-4 lg:px-6">
-        <h2 class="reveal text-4xl md:text-5xl text-center text-navy font-bold">FAQ</h2>
+        <h2 class="reveal text-4xl md:text-5xl text-center text-accent font-bold">FAQ</h2>
         <div class="mt-8 space-y-3">
-          <div class="glass rounded-xl p-4"><button class="faq-btn w-full text-left font-semibold">Do you handle student and tourist visas worldwide?</button><div class="faq-content"><p class="pt-3 text-gray-700">Yes, we support visa consultancy pathways for countries worldwide.</p></div></div>
-          <div class="glass rounded-xl p-4"><button class="faq-btn w-full text-left font-semibold">Can you support document and interview preparation?</button><div class="faq-content"><p class="pt-3 text-gray-700">Yes. We provide full document optimization and interview coaching.</p></div></div>
-          <div class="glass rounded-xl p-4"><button class="faq-btn w-full text-left font-semibold">Where is Broad Mobility located?</button><div class="faq-content"><p class="pt-3 text-gray-700">Bole Road, Addis Ababa, Ethiopia (placeholder).</p></div></div>
+          <div class="faq-card glass p-4"><button class="faq-btn w-full text-left font-semibold">Do you handle student, tourist, and work visas worldwide?</button><div class="faq-content"><p class="pt-3 text-gray-700">Yes. Our consultancy supports global visa pathways across major destinations and emerging opportunities.</p></div></div>
+          <div class="faq-card glass p-4"><button class="faq-btn w-full text-left font-semibold">Can you support document and interview preparation?</button><div class="faq-content"><p class="pt-3 text-gray-700">Absolutely. We provide document quality checks, mock interviews, and embassy-ready communication coaching.</p></div></div>
+          <div class="faq-card glass p-4"><button class="faq-btn w-full text-left font-semibold">How long does the process usually take?</button><div class="faq-content"><p class="pt-3 text-gray-700">Timelines vary by country and intake window, but we design a clear step-by-step schedule from consultation to submission.</p></div></div>
+          <div class="faq-card glass p-4"><button class="faq-btn w-full text-left font-semibold">Do you help with scholarship and funding strategy?</button><div class="faq-content"><p class="pt-3 text-gray-700">Yes, we guide scholarship positioning, funding documentation, and practical affordability planning.</p></div></div>
+          <div class="faq-card glass p-4"><button class="faq-btn w-full text-left font-semibold">Can Broad Mobility support repeat applications or refusals?</button><div class="faq-content"><p class="pt-3 text-gray-700">Yes. We review previous files, identify gaps, and rebuild a stronger application strategy.</p></div></div>
+          <div class="faq-card glass p-4"><button class="faq-btn w-full text-left font-semibold">Where is Broad Mobility located?</button><div class="faq-content"><p class="pt-3 text-gray-700">Addis Ababa, Ethiopia</p></div></div>
         </div>
       </div>
     </section>
@@ -229,24 +242,22 @@
     <div class="max-w-7xl mx-auto px-4 lg:px-6 grid md:grid-cols-3 gap-8">
       <div>
         <h3 class="font-semibold text-xl">Broad Mobility</h3>
-        <p class="mt-3 text-white/80">Bole Road, Addis Ababa, Ethiopia (placeholder)</p>
-        <p class="text-white/80">Phone: +251 9XX XXX XXX</p>
-        <p class="text-white/80">Email: scelta.infinity@gmail.com</p>
-        <p class="text-white/80">Proudly serving from the heart of Ethiopia.</p>
-        <div class="mt-4 flex flex-wrap gap-3">
-          <a href="https://www.linkedin.com/in/gediyon-adamu-yeshitila-080b90338" target="_blank"><img class="w-8 h-8 rounded object-cover" src="https://sb.kaleidousercontent.com/67418/400x400/d2ee90c914/linkedin-logo.png" alt="LinkedIn"></a>
-          <a href="https://x.com/gediyon_adamu" target="_blank"><img class="w-8 h-8 rounded object-cover" src="https://freepnglogo.com/images/all_img/1725374683twitter-x-logo.png" alt="X"></a>
-          <a href="mailto:scelta.infinity@gmail.com"><img class="w-8 h-8 rounded object-cover" src="https://image.similarpng.com/file/similarpng/very-thumbnail/2020/12/Gmail-logo-design-on-transparent-background-PNG.png" alt="Email"></a>
-          <a href="http://www.instagram.com/broadmobility" target="_blank"><img class="w-8 h-8 rounded object-cover" src="https://img.freepik.com/premium-vector/instagram-vector-logo-icon-social-media-logotype_901408-392.jpg?semt=ais_hybrid&w=740&q=80" alt="Instagram"></a>
-          <a href="https://www.facebook.com/broadmobility" target="_blank"><img class="w-8 h-8 rounded object-cover" src="https://i.pinimg.com/736x/cc/66/41/cc6641fa3397e8d3af4b34fedb1441a0.jpg" alt="Facebook"></a>
-          <a href="https://t.me/scholartransfer" target="_blank"><img class="w-8 h-8 rounded object-cover" src="https://img.freepik.com/premium-psd/social-media-telegram-logo-icon-isolated-transparent-background_996812-36981.jpg" alt="Telegram"></a>
-          <a href="https://www.fiverr.com/s/vv0AaAN" target="_blank"><img class="w-8 h-8 rounded object-cover" src="https://upload.wikimedia.org/wikipedia/commons/a/a6/Fiverr_Logo_fiverr.png" alt="Fiverr"></a>
-          <a href="https://www.upwork.com/freelancers/~0123a8909753318865?mp_source=share" target="_blank"><img class="w-8 h-8 rounded object-cover" src="https://cdn.worldvectorlogo.com/logos/upwork-roundedsquare-1.svg" alt="Upwork"></a>
+        <p class="mt-3 text-white/80">Addis Ababa, Ethiopia</p>
+        <h4 class="mt-6 font-semibold">Connect</h4>
+        <div class="mt-3 flex flex-wrap gap-3">
+          <a class="social-float" style="animation-delay:.1s" href="mailto:scelta.infinity@gmail.com"><img class="w-8 h-8 rounded object-cover" src="https://pnglove.com/data/img/1231_aHzA.jpg" alt="Gmail"></a>
+          <a class="social-float" style="animation-delay:.2s" href="http://www.instagram.com/broadmobility" target="_blank"><img class="w-8 h-8 rounded object-cover" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/250px-Instagram_logo_2022.svg.png" alt="Instagram"></a>
+          <a class="social-float" style="animation-delay:.3s" href="https://www.facebook.com/broadmobility" target="_blank"><img class="w-8 h-8 rounded object-cover" src="https://upload.wikimedia.org/wikipedia/commons/c/cd/Facebook_logo_%28square%29.png" alt="Facebook"></a>
+          <a class="social-float" style="animation-delay:.4s" href="https://t.me/scholartransfer" target="_blank"><img class="w-8 h-8 rounded object-cover" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Telegram_logo.svg/960px-Telegram_logo.svg.png" alt="Telegram"></a>
+          <a class="social-float" style="animation-delay:.5s" href="https://www.linkedin.com/in/gediyon-adamu-yeshitila-080b90338" target="_blank"><img class="w-8 h-8 rounded object-cover" src="https://sb.kaleidousercontent.com/67418/400x400/d2ee90c914/linkedin-logo.png" alt="LinkedIn"></a>
+          <a class="social-float" style="animation-delay:.6s" href="https://x.com/gediyon_adamu" target="_blank"><img class="w-8 h-8 rounded object-cover" src="https://freepnglogo.com/images/all_img/1725374683twitter-x-logo.png" alt="X"></a>
+          <a class="social-float" style="animation-delay:.7s" href="https://www.fiverr.com/s/vv0AaAN" target="_blank"><img class="w-8 h-8 rounded object-cover" src="https://upload.wikimedia.org/wikipedia/commons/a/a6/Fiverr_Logo_fiverr.png" alt="Fiverr"></a>
+          <a class="social-float" style="animation-delay:.8s" href="https://www.upwork.com/freelancers/~0123a8909753318865?mp_source=share" target="_blank"><img class="w-8 h-8 rounded object-cover" src="https://cdn.worldvectorlogo.com/logos/upwork-roundedsquare-1.svg" alt="Upwork"></a>
         </div>
       </div>
       <div>
         <h4 class="font-semibold">Navigation</h4>
-        <ul class="mt-3 space-y-2 text-white/80">
+        <ul class="footer-nav mt-3 space-y-2 text-white/80">
           <li><a href="#home">Home</a></li><li><a href="#about">About Us</a></li><li><a href="#services">Services</a></li><li><a href="#destinations">Destinations</a></li><li><a href="#impact">Success Stories</a></li><li><a href="#how">How It Works</a></li><li><a href="#testimonials">Testimonials</a></li><li><a href="#contact">Contact</a></li>
         </ul>
       </div>
@@ -254,7 +265,7 @@
         <p class="text-white/70 text-sm">Trusted visa consultancy for students, tourists, and professionals worldwide.</p>
       </div>
     </div>
-    <div class="max-w-7xl mx-auto px-4 lg:px-6 mt-10 flex flex-col md:flex-row md:items-center md:justify-between gap-2 text-sm text-white/70">
+    <div class="max-w-7xl mx-auto px-4 lg:px-6 mt-10 border-t border-white/20 pt-4 flex flex-col md:flex-row md:items-center md:justify-between gap-2 text-sm text-white/70">
       <p>Copyright © 2026 Broad Mobility. All rights reserved.</p>
       <p><button class="underline" id="termsBtn">Terms of Service</button> | <button class="underline" id="privacyBtn">Privacy Policy</button></p>
     </div>
@@ -374,6 +385,7 @@
     gsap.utils.toArray('.reveal,.service-card,.country-card,.step-card,blockquote').forEach((el,i)=>{
       gsap.from(el,{y:65,opacity:0,duration:.8,delay:i*.03,scrollTrigger:{trigger:el,start:'top 86%'}})
     });
+    gsap.to('.step-card',{opacity:.75,yoyo:true,repeat:-1,stagger:.25,duration:1.2,ease:'sine.inOut'});
 
     document.querySelectorAll('.counter').forEach(el=>{
       const target=+el.dataset.target;
@@ -414,7 +426,7 @@
       const card=e.target.closest('[data-country]'); if(!card) return;
       const data = destinations.find(d=>d.key===card.dataset.country);
       countryHero.src=data.image;
-      countryTitle.textContent=`${data.flag} ${data.name}`;
+      countryTitle.textContent=`${data.name} ${data.flag}`;
       countryWhy.textContent=data.why;
       countryScholarships.textContent=data.scholarships;
       countryWork.textContent=data.work;
