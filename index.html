@@ -38,6 +38,9 @@
     .logo-pulse{animation:logoPulse 4s ease-in-out infinite;filter:drop-shadow(0 6px 20px rgba(0,166,81,.25))}
     .btn-premium{transition:all .3s ease}
     .btn-premium:hover{transform:translateY(-2px) scale(1.05);box-shadow:0 0 0 2px rgba(0,166,81,.2),0 16px 30px rgba(0,166,81,.35)}
+
+    .premium-word{background:linear-gradient(90deg,#00A651 0%,#00A651 45%,#001F3F 100%);-webkit-background-clip:text;background-clip:text;color:transparent;display:inline-block;filter:drop-shadow(0 0 8px rgba(0,166,81,.22));transition:transform .35s ease,filter .35s ease;animation:premiumFloat 4.8s ease-in-out infinite}
+    .premium-word:hover{transform:translateY(-2px) scale(1.03);filter:drop-shadow(0 0 14px rgba(0,166,81,.35))}
     .country-card:hover .country-image{transform:scale(1.08)}
     .country-card:hover{transform:translateY(-8px)}
     .country-card:hover .country-pulse{opacity:1;transform:translateY(0)}
@@ -62,6 +65,7 @@
     @keyframes fly{0%,100%{transform:translate(0,0)}50%{transform:translate(24px,-10px)}}
     @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-16px)}}
     @keyframes logoPulse{0%,100%{transform:rotate(0) scale(1)}50%{transform:rotate(-2deg) scale(1.03)}}
+    @keyframes premiumFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
   </style>
 </head>
 <body>
@@ -139,7 +143,7 @@
         </div>
         <a href="https://www.linkedin.com/in/gediyon-adamu-080b90338" target="_blank" rel="noopener noreferrer" class="reveal block">
           <div class="glass p-4 rounded-3xl hover:shadow-glow transition">
-            <img src="https://i.imgur.com/bbiOPcf.jpeg" alt="Gediyon Adamu portrait" class="w-full h-[440px] object-cover rounded-2xl" />
+            <img src="https://i.imgur.com/bbiOPcf.jpeg" alt="Gediyon Adamu portrait" class="w-full h-[520px] object-cover object-[center_10%] rounded-2xl" />
           </div>
         </a>
       </div>
@@ -147,12 +151,12 @@
 
     <section id="services" class="py-24 bg-white">
       <div class="max-w-7xl mx-auto px-4 lg:px-6">
-        <h2 class="reveal text-4xl md:text-5xl text-center text-navy font-bold">Premium Consultancy Services</h2>
+        <h2 class="reveal text-4xl md:text-5xl text-center text-navy font-bold"><span class="premium-word">Premium</span> Consultancy Services</h2>
         <div class="mt-12 grid md:grid-cols-2 xl:grid-cols-4 gap-6">
-          <article class="service-card reveal glass rounded-2xl p-6 hover:-translate-y-1 hover:shadow-glow transition"><h3 class="font-semibold text-xl text-navy">Student Visa Consultancy</h3><p class="mt-3 text-gray-700">Priority support for international academic pathways and embassy readiness.</p></article>
-          <article class="service-card reveal glass rounded-2xl p-6 hover:-translate-y-1 hover:shadow-glow transition"><h3 class="font-semibold text-xl text-navy">Tourist Visa Consultancy</h3><p class="mt-3 text-gray-700">Precise planning for trusted, compliant and efficient travel visa processing.</p></article>
-          <article class="service-card reveal glass rounded-2xl p-6 hover:-translate-y-1 hover:shadow-glow transition"><h3 class="font-semibold text-xl text-navy">Document Preparation & Interview Coaching</h3><p class="mt-3 text-gray-700">Document quality assurance with scenario-based interview practice sessions.</p></article>
-          <article class="service-card reveal glass rounded-2xl p-6 hover:-translate-y-1 hover:shadow-glow transition"><h3 class="font-semibold text-xl text-navy">University Admission Support</h3><p class="mt-3 text-gray-700">Structured guidance for program selection, profile positioning, and admissions.</p></article>
+          <article class="service-card reveal glass rounded-2xl p-6 hover:-translate-y-1 hover:shadow-glow transition"><h3 class="font-bold text-xl text-accent">Student Visa Consultancy</h3><p class="mt-3 text-gray-700">Priority support for international academic pathways and embassy readiness.</p></article>
+          <article class="service-card reveal glass rounded-2xl p-6 hover:-translate-y-1 hover:shadow-glow transition"><h3 class="font-bold text-xl text-accent">Tourist Visa Consultancy</h3><p class="mt-3 text-gray-700">Precise planning for trusted, compliant and efficient travel visa processing.</p></article>
+          <article class="service-card reveal glass rounded-2xl p-6 hover:-translate-y-1 hover:shadow-glow transition"><h3 class="font-bold text-xl text-accent">Document Preparation & Interview Coaching</h3><p class="mt-3 text-gray-700">Document quality assurance with scenario-based interview practice sessions.</p></article>
+          <article class="service-card reveal glass rounded-2xl p-6 hover:-translate-y-1 hover:shadow-glow transition"><h3 class="font-bold text-xl text-accent">University Admission Support</h3><p class="mt-3 text-gray-700">Structured guidance for program selection, profile positioning, and admissions.</p></article>
         </div>
       </div>
     </section>
