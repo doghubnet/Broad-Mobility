@@ -1,0 +1,46 @@
+:root{
+  --color-navy:#001F3F;
+  --color-accent:#00A651;
+  --color-gold:#F2C94C;
+  --color-bg:#F8F9FA;
+  --color-ink:#1A1A1A;
+  --shadow-glass:0 20px 45px rgba(0,31,63,.13);
+  --shadow-glow:0 14px 38px rgba(0,166,81,.28);
+  --radius-xl:1rem;
+  --radius-2xl:1.25rem;
+}
+
+    html,body{width:100%;min-height:100%;overflow-x:hidden} body{font-family:Inter,ui-sans-serif,system-ui;background:#F8F9FA;color:#1A1A1A}
+    .glass{backdrop-filter:blur(16px);background:rgba(248,249,250,.75);border:1px solid rgba(255,255,255,.5)}
+    .progress-line{position:fixed;top:0;left:0;height:4px;width:0;background:linear-gradient(90deg,#00A651,#F2C94C);z-index:80}
+    .hero:before{content:'';position:absolute;inset:-12%;z-index:-3;background:radial-gradient(circle at 10% 8%,rgba(0,166,81,.22),transparent 34%),radial-gradient(circle at 85% 20%,rgba(242,201,76,.2),transparent 34%),radial-gradient(circle at 50% 80%,rgba(0,31,63,.16),transparent 48%);animation:drift 16s ease-in-out infinite alternate}
+    .hero:after{content:'';position:absolute;inset:0;z-index:-2;background-image:linear-gradient(rgba(0,31,63,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(0,31,63,.07) 1px,transparent 1px);background-size:58px 58px;mask-image:radial-gradient(circle at center,black 32%,transparent 74%)}
+    .floating{position:absolute;border-radius:9999px;opacity:.3;animation:float 8s ease-in-out infinite}
+    .logo-pulse{animation:logoPulse 4s ease-in-out infinite;filter:drop-shadow(0 6px 20px rgba(0,166,81,.25))}
+    .btn-premium{transition:all .3s ease}.btn-premium:hover{transform:translateY(-2px) scale(1.05);box-shadow:0 0 0 2px rgba(0,166,81,.2),0 16px 30px rgba(0,166,81,.35)}
+    .premium-word{background:linear-gradient(90deg,#00A651 0%,#00A651 45%,#001F3F 100%);-webkit-background-clip:text;background-clip:text;color:transparent;display:inline-block;filter:drop-shadow(0 0 8px rgba(0,166,81,.22));animation:premiumFloat 4.8s ease-in-out infinite}
+    .country-card:hover .country-image{transform:scale(1.08)} .country-card:hover{transform:translateY(-8px)} .country-card:hover .country-pulse{opacity:1;transform:translateY(0)}
+    .country-image{transition:transform .65s ease}.country-pulse{opacity:0;transform:translateY(8px);transition:all .45s ease}
+    .faq-content{max-height:0;overflow:hidden;transition:max-height .35s ease}
+    .faq-card{border:1.2px solid rgba(0,166,81,.45);border-radius:14px;transition:all .3s ease}.faq-card:hover{transform:translateY(-2px) scale(1.01);box-shadow:0 0 0 2px rgba(0,166,81,.15),0 14px 24px rgba(0,166,81,.2)}
+    .footer-nav a{position:relative;display:inline-block}.footer-nav a:after{content:"";position:absolute;left:0;bottom:-4px;width:0;height:2px;background:#00A651;box-shadow:0 0 10px rgba(0,166,81,.7);transition:width .25s ease}.footer-nav a:hover:after{width:100%}
+    .social-float{animation:socialFloat 5s ease-in-out infinite}
+    .modal-open{overflow:hidden}.modal-overlay{background:rgba(0,18,38,.9);backdrop-filter:blur(10px)}
+    .particle-bg{position:absolute;inset:0;background:radial-gradient(circle at 20% 20%,rgba(0,166,81,.22),transparent 45%),radial-gradient(circle at 80% 10%,rgba(242,201,76,.18),transparent 42%),radial-gradient(circle at 50% 80%,rgba(255,255,255,.08),transparent 42%);pointer-events:none}
+    .drop-zone{border:1.5px dashed rgba(0,166,81,.55);background:rgba(0,166,81,.08);transition:all .25s ease}.drop-zone:hover{border-color:#21d399;box-shadow:0 0 0 2px rgba(33,211,153,.25)}
+    .hero-contrails{position:absolute;inset:0;z-index:-1;opacity:.55;pointer-events:none}.hero-contrails path{stroke-linecap:round;fill:none}
+    .hero-contrails .trail{stroke:rgba(255,255,255,.45);stroke-width:2.3;stroke-dasharray:8 12;animation:dashMove 18s linear infinite}.hero-contrails .trail.gold{stroke:rgba(242,201,76,.45)}
+    .hero-contrails .plane{fill:rgba(255,255,255,.9);filter:drop-shadow(0 0 8px rgba(255,255,255,.6));animation:fly 16s ease-in-out infinite}.hero-contrails .plane2{animation-delay:3s}
+    .modal-scroll{height:100vh;overflow-y:auto;-ms-overflow-style:none;scrollbar-width:none}.modal-scroll::-webkit-scrollbar{display:none}
+    .flow-line{position:relative;overflow:hidden}.flow-line:after{content:"";position:absolute;left:-35%;top:0;height:100%;width:35%;background:linear-gradient(90deg,transparent,rgba(0,166,81,.75),transparent);animation:flow 3s linear infinite}
+    .marquee{white-space:nowrap;overflow:hidden}.marquee-track{display:flex;animation:marq 18s linear infinite}
+    .testi-row{display:flex;gap:16px;width:max-content}.testi-row.left{animation:loopLeft 42s linear infinite}.testi-row.right{animation:loopRight 42s linear infinite}
+    @keyframes marq{to{transform:translateX(-50%)}} @keyframes loopLeft{to{transform:translateX(-50%)}} @keyframes loopRight{from{transform:translateX(-50%)}to{transform:translateX(0)}}
+    @keyframes dashMove{to{stroke-dashoffset:-240}} @keyframes drift{from{transform:translate3d(-2%,0,0) scale(1)}to{transform:translate3d(2%,-2%,0) scale(1.05)}}
+    @keyframes fly{0%,100%{transform:translate(0,0)}50%{transform:translate(24px,-10px)}} @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-16px)}}
+    @keyframes logoPulse{0%,100%{transform:rotate(0) scale(1)}50%{transform:rotate(-2deg) scale(1.03)}} @keyframes premiumFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+    @keyframes socialFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}} @keyframes flow{to{left:100%}} @keyframes spin-slow{from{transform:rotate(0deg)}to{transform:rotate(360deg)}} @keyframes check-draw{0%{stroke-dasharray:0 1;opacity:0}15%{opacity:1}50%{stroke-dasharray:1 0;opacity:1}75%{stroke-dasharray:1 0;opacity:1}100%{stroke-dasharray:0 1;opacity:0}} .spin-slow{animation:spin-slow 2s linear infinite}.check-draw{animation:check-draw 1.8s ease-in-out infinite}
+
+.delay-1{animation-delay:.1s}.delay-2{animation-delay:.2s}.delay-3{animation-delay:.3s}.delay-4{animation-delay:.4s}.delay-5{animation-delay:.5s}.delay-6{animation-delay:.6s}.delay-7{animation-delay:.7s}.delay-8{animation-delay:.8s}
+.float-delay-1{animation-delay:1s}.float-delay-2{animation-delay:2s}
+.ring-mask{-webkit-mask:linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;padding:2px}

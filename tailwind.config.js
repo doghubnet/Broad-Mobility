@@ -1,0 +1,1 @@
+tailwind.config={theme:{extend:{colors:{navy:'#001F3F',accent:'#00A651',gold:'#F2C94C',bgsoft:'#F8F9FA',ink:'#1A1A1A'},boxShadow:{glass:'0 20px 45px rgba(0,31,63,.13)',glow:'0 14px 38px rgba(0,166,81,.28)'}}}};
