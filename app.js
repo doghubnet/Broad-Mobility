@@ -16,6 +16,35 @@ const NAV_LINKS = [
 const desktopNav = document.getElementById('desktopNav');
 const mobileNav = document.getElementById('mobileNav');
 const footerNav = document.getElementById('footerNav');
+const homeTestiTop = document.getElementById('homeTestiTop');
+const homeTestiBottom = document.getElementById('homeTestiBottom');
+const impactCount = document.getElementById('impactCount');
+const exploreBtn = document.getElementById('exploreBtn');
+const confidenceBtn = document.getElementById('confidenceBtn');
+const progressLine = document.getElementById('progressLine');
+const header = document.getElementById('header');
+const menuBtn = document.getElementById('menuBtn');
+const closeMenu = document.getElementById('closeMenu');
+const mobileMenu = document.getElementById('mobileMenu');
+const storyCarousel = document.getElementById('storyCarousel');
+const countryHero = document.getElementById('countryHero');
+const countryTitle = document.getElementById('countryTitle');
+const countryWhy = document.getElementById('countryWhy');
+const countryScholarships = document.getElementById('countryScholarships');
+const countryWork = document.getElementById('countryWork');
+const countryStability = document.getElementById('countryStability');
+const countryLife = document.getElementById('countryLife');
+const universityGrid = document.getElementById('universityGrid');
+const bookBtnHero = document.getElementById('bookBtnHero');
+const bookBtnTop = document.getElementById('bookBtnTop');
+const bookBtnMobile = document.getElementById('bookBtnMobile');
+const termsBtn = document.getElementById('termsBtn');
+const privacyBtn = document.getElementById('privacyBtn');
+const termsModal = document.getElementById('termsModal');
+const privacyModal = document.getElementById('privacyModal');
+const appLevel = document.getElementById('appLevel');
+const dynamicUploads = document.getElementById('dynamicUploads');
+const consultForm = document.getElementById('consultForm');
 if (desktopNav && mobileNav && footerNav) {
   desktopNav.innerHTML = NAV_LINKS.map(({ href, label }) => `<li><a class="nav-link" href="${href}">${label}</a></li>`).join('');
   mobileNav.innerHTML = NAV_LINKS.map(({ href, label }) => `<a class="mobile-link" href="${href}">${label}</a>`).join('');
@@ -49,7 +78,10 @@ gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
     const mkTestiCard = t => `<article class="glass rounded-2xl p-5 border-2 border-accent/70 min-w-[320px] max-w-[320px]"><div class="text-4xl text-accent leading-none">“</div><div class="mt-2 text-gold">★★★★★</div><p class="mt-3 text-sm text-gray-700">${t.q}</p><div class="mt-4 flex items-center gap-3"><img src="${t.img}" class="w-12 h-12 rounded-full object-cover" loading="lazy" alt="${t.name}"><p class="text-sm font-bold text-accent">${t.name} • ${t.country}</p></div></article>`;
     const loopCards = [...testimonialsData, ...testimonialsData].map(mkTestiCard).join('');
-    homeTestiTop.innerHTML = loopCards; homeTestiBottom.innerHTML = loopCards;
+    if (homeTestiTop && homeTestiBottom) {
+      homeTestiTop.innerHTML = loopCards;
+      homeTestiBottom.innerHTML = loopCards;
+    }
 
     const grid = document.getElementById('destinationGrid');
     destinations.forEach((d,idx)=>{ const tall = idx===0||idx===3 ? 'sm:row-span-2' : ''; grid.insertAdjacentHTML('beforeend', `<article class="country-card reveal ${tall} relative rounded-2xl overflow-hidden transition duration-500 cursor-pointer" data-country="${d.key}"><img class="country-image absolute inset-0 w-full h-full object-cover" src="${d.image}" alt="${d.name}" loading="lazy"/><div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div><div class="absolute bottom-4 left-4 text-white"><h3 class="font-semibold text-xl">${d.name} ${d.flag}</h3><p class="country-pulse text-sm">Success Pulse: ${d.pulse}</p></div></article>`); });
@@ -64,15 +96,22 @@ gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
     document.querySelectorAll('.counter').forEach(el=>{ const target=+el.dataset.target; ScrollTrigger.create({trigger:el,start:'top 90%',once:true,onEnter:()=>{const o={v:0};gsap.to(o,{v:target,duration:1.8,onUpdate:()=>el.textContent=Math.floor(o.v)})}}) });
     ScrollTrigger.create({trigger:'#impact',start:'top 75%',once:true,onEnter:()=>{const o={v:0};gsap.to(o,{v:51,duration:2.1,onUpdate:()=>impactCount.textContent=Math.floor(o.v)})}});
 
-    exploreBtn.onclick=()=>gsap.to(window,{duration:1.1,scrollTo:'#destinations',ease:'power2.inOut'});
-    confidenceBtn.onclick=()=>gsap.to(window,{duration:1.1,scrollTo:'#home',ease:'power2.inOut'});
+    if (exploreBtn) exploreBtn.onclick=()=>gsap.to(window,{duration:1.1,scrollTo:'#destinations',ease:'power2.inOut'});
+    if (confidenceBtn) confidenceBtn.onclick=()=>gsap.to(window,{duration:1.1,scrollTo:'#home',ease:'power2.inOut'});
 
     window.addEventListener('scroll',()=>{ const p=(window.scrollY/(document.body.scrollHeight-innerHeight))*100; progressLine.style.width=`${p}%`; header.classList.toggle('scale-[.97]',window.scrollY>40); [...document.querySelectorAll('main section')].forEach(sec=>{ if(window.scrollY>=sec.offsetTop-160&&window.scrollY<sec.offsetTop+sec.offsetHeight-160){ document.querySelectorAll('.nav-link').forEach(a=>a.classList.toggle('text-accent',a.getAttribute('href')==='#'+sec.id)); } }); });
 
     document.querySelectorAll('.faq-btn').forEach(btn=>btn.addEventListener('click',()=>{ const panel=btn.nextElementSibling,open=panel.style.maxHeight; document.querySelectorAll('.faq-content').forEach(p=>p.style.maxHeight=null); panel.style.maxHeight=open?null:panel.scrollHeight+'px'; }));
 
-    menuBtn.onclick=()=>{mobileMenu.classList.remove('hidden');menuBtn.setAttribute('aria-expanded','true');}; closeMenu.onclick=()=>{mobileMenu.classList.add('hidden');menuBtn.setAttribute('aria-expanded','false');}; document.querySelectorAll('.mobile-link').forEach(l=>l.onclick=()=>{mobileMenu.classList.add('hidden');menuBtn.setAttribute('aria-expanded','false');});
-    let s=0; setInterval(()=>{s=(s+1)%3;storyCarousel.style.transform=`translateX(-${s*100}%)`},4000);
+    if (menuBtn && closeMenu && mobileMenu) {
+      menuBtn.onclick=()=>{mobileMenu.classList.remove('hidden');menuBtn.setAttribute('aria-expanded','true');};
+      closeMenu.onclick=()=>{mobileMenu.classList.add('hidden');menuBtn.setAttribute('aria-expanded','false');};
+      document.querySelectorAll('.mobile-link').forEach(l=>l.onclick=()=>{mobileMenu.classList.add('hidden');menuBtn.setAttribute('aria-expanded','false');});
+    }
+    if (storyCarousel) {
+      let s=0;
+      setInterval(()=>{s=(s+1)%3;storyCarousel.style.transform=`translateX(-${s*100}%)`},4000);
+    }
 
     const countryModal = document.getElementById('countryModal'), countryCard = document.getElementById('countryModalCard');
     grid.addEventListener('click',(e)=>{ const card=e.target.closest('[data-country]'); if(!card) return; const data = destinations.find(d=>d.key===card.dataset.country); countryHero.src=data.image; countryTitle.textContent=`${data.name} ${data.flag}`; countryWhy.textContent=data.why; countryScholarships.textContent=data.scholarships; countryWork.textContent=data.work; countryStability.textContent=data.stability; countryLife.textContent=data.life; universityGrid.innerHTML = data.unis.map(u=>`<article class="glass rounded-xl p-4 hover:-translate-y-1 hover:shadow-glow transition"><h5 class="font-semibold text-navy">${u[0]}</h5><p class="text-sm text-gray-700 mt-2">${u[1]}</p></article>`).join(''); countryModal.classList.remove('hidden'); document.body.classList.add('modal-open'); gsap.fromTo(countryCard,{opacity:0,scale:.95,y:20},{opacity:1,scale:1,y:0,duration:.45,ease:'power2.out'}); });
@@ -82,12 +121,21 @@ gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
     const consultModal = document.getElementById('consultModal'), consultCard = document.getElementById('consultCard');
     const openConsult = ()=>{ consultModal.classList.remove('hidden');document.body.classList.add('modal-open');gsap.fromTo(consultCard,{opacity:0,scale:.95,y:20},{opacity:1,scale:1,y:0,duration:.45});gsap.from('#consultForm > *',{opacity:0,y:16,stagger:.05,duration:.35,delay:.12}); };
     const closeConsult = ()=> gsap.to(consultCard,{opacity:0,scale:.95,duration:.25,onComplete:()=>{consultModal.classList.add('hidden');document.body.classList.remove('modal-open')}});
-    bookBtnHero.onclick=openConsult; bookBtnTop.onclick=openConsult; bookBtnMobile.onclick=()=>{mobileMenu.classList.add('hidden');openConsult();}; document.querySelector('.consult-close').onclick=closeConsult; consultModal.addEventListener('click',(e)=>{ if(e.target===consultModal) closeConsult(); });
+    if (bookBtnHero) bookBtnHero.onclick=openConsult;
+    if (bookBtnTop) bookBtnTop.onclick=openConsult;
+    if (bookBtnMobile) bookBtnMobile.onclick=()=>{mobileMenu.classList.add('hidden');openConsult();};
+    document.querySelector('.consult-close').onclick=closeConsult;
+    consultModal.addEventListener('click',(e)=>{ if(e.target===consultModal) closeConsult(); });
 
     document.addEventListener('keydown',(e)=>{ if(e.key==='Escape' && !countryModal.classList.contains('hidden')) closeCountryModal(); if(e.key==='Escape' && !consultModal.classList.contains('hidden')) closeConsult(); if(e.key==='Escape') document.querySelectorAll('#termsModal,#privacyModal').forEach(m=>m.classList.add('hidden')); });
 
-    termsBtn.onclick=()=>{termsModal.classList.remove('hidden');document.body.classList.add('modal-open');}; privacyBtn.onclick=()=>{privacyModal.classList.remove('hidden');document.body.classList.add('modal-open');}; document.querySelectorAll('.legal-close').forEach(btn=>btn.onclick=()=>{document.getElementById(btn.dataset.target).classList.add('hidden');document.body.classList.remove('modal-open');}); [termsModal,privacyModal].forEach(mod=>mod.addEventListener('click',e=>{if(e.target===mod){mod.classList.add('hidden');document.body.classList.remove('modal-open');}}));
+    if (termsBtn && termsModal) termsBtn.onclick=()=>{termsModal.classList.remove('hidden');document.body.classList.add('modal-open');};
+    if (privacyBtn && privacyModal) privacyBtn.onclick=()=>{privacyModal.classList.remove('hidden');document.body.classList.add('modal-open');};
+    document.querySelectorAll('.legal-close').forEach(btn=>btn.onclick=()=>{document.getElementById(btn.dataset.target).classList.add('hidden');document.body.classList.remove('modal-open');});
+    [termsModal,privacyModal].forEach(mod=>mod && mod.addEventListener('click',e=>{if(e.target===mod){mod.classList.add('hidden');document.body.classList.remove('modal-open');}}));
 
-    appLevel.addEventListener('change',()=>{ const v=appLevel.value; if(v==='Bachelor') dynamicUploads.innerHTML = `<label class="drop-zone rounded-xl p-4 block">Grade 10 & 12 National Exams<input type="file" class="mt-2 w-full text-sm" multiple /></label>`; else if(v==='Masters') dynamicUploads.innerHTML = `<div class="grid md:grid-cols-2 gap-4"><label class="drop-zone rounded-xl p-4 block">Bachelor Degree Certificate<input type="file" class="mt-2 w-full text-sm" multiple /></label><label class="drop-zone rounded-xl p-4 block">Bachelor Transcript/Student Copy<input type="file" class="mt-2 w-full text-sm" multiple /></label></div>`; else dynamicUploads.innerHTML = ''; gsap.from('#dynamicUploads .drop-zone',{opacity:0,y:10,stagger:.08,duration:.3}); });
-    consultForm.addEventListener('submit',(e)=>{e.preventDefault();gsap.fromTo(e.submitter,{scale:1},{scale:.96,yoyo:true,repeat:1,duration:.09});});
+    if (appLevel && dynamicUploads) {
+      appLevel.addEventListener('change',()=>{ const v=appLevel.value; if(v==='Bachelor') dynamicUploads.innerHTML = `<label class="drop-zone rounded-xl p-4 block">Grade 10 & 12 National Exams<input type="file" class="mt-2 w-full text-sm" multiple /></label>`; else if(v==='Masters') dynamicUploads.innerHTML = `<div class="grid md:grid-cols-2 gap-4"><label class="drop-zone rounded-xl p-4 block">Bachelor Degree Certificate<input type="file" class="mt-2 w-full text-sm" multiple /></label><label class="drop-zone rounded-xl p-4 block">Bachelor Transcript/Student Copy<input type="file" class="mt-2 w-full text-sm" multiple /></label></div>`; else dynamicUploads.innerHTML = ''; gsap.from('#dynamicUploads .drop-zone',{opacity:0,y:10,stagger:.08,duration:.3}); });
+    }
+    if (consultForm) consultForm.addEventListener('submit',(e)=>{e.preventDefault();gsap.fromTo(e.submitter,{scale:1},{scale:.96,yoyo:true,repeat:1,duration:.09});});
 });
